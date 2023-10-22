@@ -16,8 +16,8 @@ public:
 	PuntDeInteresBotigaSolucio(Coordinate coord, string name,string shopType, string hours,bool wheelc)
 		: PuntDeInteresBase(coord, name), m_shop(shopType), m_opening_hours(hours), m_wheelchair(wheelc) {};
 
-	std::string getName();
-	Coordinate getCoord();
+	//std::string getName();
+	//Coordinate getCoord();
 	unsigned int getColor();
 
 	

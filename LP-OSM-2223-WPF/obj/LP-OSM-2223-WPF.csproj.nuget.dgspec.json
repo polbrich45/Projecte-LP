@@ -1,14 +1,14 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bbrri\\OneDrive\\Escritorio\\codiGraficEstudiants\\estudiants\\LP-OSM-2223-WPF\\LP-OSM-2223-WPF.csproj": {}
+    "C:\\Users\\Usuario\\Desktop\\Projecte-LB\\LP-OSM-2223-WPF\\LP-OSM-2223-WPF.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bbrri\\OneDrive\\Escritorio\\codiGraficEstudiants\\estudiants\\LP-OSM-2223-DLL\\LP-OSM-2223-DLL.vcxproj": {
+    "C:\\Users\\Usuario\\Desktop\\Projecte-LB\\LP-OSM-2223-DLL\\LP-OSM-2223-DLL.vcxproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\bbrri\\OneDrive\\Escritorio\\codiGraficEstudiants\\estudiants\\LP-OSM-2223-DLL\\LP-OSM-2223-DLL.vcxproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\Projecte-LB\\LP-OSM-2223-DLL\\LP-OSM-2223-DLL.vcxproj",
         "projectName": "LP-OSM-2223-DLL",
-        "projectPath": "C:\\Users\\bbrri\\OneDrive\\Escritorio\\codiGraficEstudiants\\estudiants\\LP-OSM-2223-DLL\\LP-OSM-2223-DLL.vcxproj",
+        "projectPath": "C:\\Users\\Usuario\\Desktop\\Projecte-LB\\LP-OSM-2223-DLL\\LP-OSM-2223-DLL.vcxproj",
         "frameworks": {
           "native": {
             "projectReferences": {}
@@ -19,20 +19,21 @@
         "native": {}
       }
     },
-    "C:\\Users\\bbrri\\OneDrive\\Escritorio\\codiGraficEstudiants\\estudiants\\LP-OSM-2223-WPF\\LP-OSM-2223-WPF.csproj": {
+    "C:\\Users\\Usuario\\Desktop\\Projecte-LB\\LP-OSM-2223-WPF\\LP-OSM-2223-WPF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bbrri\\OneDrive\\Escritorio\\codiGraficEstudiants\\estudiants\\LP-OSM-2223-WPF\\LP-OSM-2223-WPF.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\Projecte-LB\\LP-OSM-2223-WPF\\LP-OSM-2223-WPF.csproj",
         "projectName": "LP-OSM-2223-WPF",
-        "projectPath": "C:\\Users\\bbrri\\OneDrive\\Escritorio\\codiGraficEstudiants\\estudiants\\LP-OSM-2223-WPF\\LP-OSM-2223-WPF.csproj",
-        "packagesPath": "C:\\Users\\bbrri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bbrri\\OneDrive\\Escritorio\\codiGraficEstudiants\\estudiants\\LP-OSM-2223-WPF\\obj\\",
+        "projectPath": "C:\\Users\\Usuario\\Desktop\\Projecte-LB\\LP-OSM-2223-WPF\\LP-OSM-2223-WPF.csproj",
+        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Usuario\\Desktop\\Projecte-LB\\LP-OSM-2223-WPF\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\bbrri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -47,8 +48,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\bbrri\\OneDrive\\Escritorio\\codiGraficEstudiants\\estudiants\\LP-OSM-2223-DLL\\LP-OSM-2223-DLL.vcxproj": {
-                "projectPath": "C:\\Users\\bbrri\\OneDrive\\Escritorio\\codiGraficEstudiants\\estudiants\\LP-OSM-2223-DLL\\LP-OSM-2223-DLL.vcxproj"
+              "C:\\Users\\Usuario\\Desktop\\Projecte-LB\\LP-OSM-2223-DLL\\LP-OSM-2223-DLL.vcxproj": {
+                "projectPath": "C:\\Users\\Usuario\\Desktop\\Projecte-LB\\LP-OSM-2223-DLL\\LP-OSM-2223-DLL.vcxproj"
               }
             }
           }
@@ -96,7 +97,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -14,8 +14,8 @@ public:
 	PuntDeInteresRestaurantSolucio(Coordinate coord, string name, string cuina, bool invalid)
 		: PuntDeInteresBase(coord, name), m_cuisine(cuina), m_normatiu(invalid) {};
 
-	std::string getName();
-	Coordinate getCoord();
+	//td::string getName();
+	//Coordinate getCoord();
 	unsigned int getColor();
 
 

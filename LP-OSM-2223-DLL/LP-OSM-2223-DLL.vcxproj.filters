@@ -48,6 +48,9 @@
     <ClInclude Include="PuntDeInteresRestaurantSolucio.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MapaSolucio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -79,6 +82,9 @@
     </ClCompile>
     <ClCompile Include="CamiSolucio.h">
       <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MapaSolucio.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
