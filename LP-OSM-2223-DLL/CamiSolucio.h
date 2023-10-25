@@ -5,7 +5,7 @@
 class CamiSolucio: public CamiBase {
 public:
 	
-	std::vector<Coordinate> getCamiCoords() = 0
+	std::vector<Coordinate> getCamiCoords()
     {
         std::vector<Coordinate> coordenadas;
 
@@ -17,4 +17,5 @@ public:
         return coordenadas;
     }
 
+    CamiSolucio() { getCamiCoords(); }
 };

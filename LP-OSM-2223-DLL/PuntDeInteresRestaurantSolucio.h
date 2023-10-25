@@ -7,22 +7,13 @@ class PuntDeInteresRestaurantSolucio : public PuntDeInteresBase
 private:
 
 	string m_cuisine;
-	bool m_normatiu;
 public:
-	PuntDeInteresRestaurantSolucio() : PuntDeInteresBase(), m_cuisine("undefinit"),
-		m_normatiu(false){}
+	PuntDeInteresRestaurantSolucio() : PuntDeInteresBase(), m_cuisine("undefinit") {}
 	PuntDeInteresRestaurantSolucio(Coordinate coord, string name, string cuina, bool invalid)
-		: PuntDeInteresBase(coord, name), m_cuisine(cuina), m_normatiu(invalid) {};
+		: PuntDeInteresBase(coord, name), m_cuisine(cuina) {};
 
-	//td::string getName();
-	//Coordinate getCoord();
 	unsigned int getColor();
 
-
-
-
-
-
-
 };
+
 

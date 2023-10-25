@@ -1,4 +1,5 @@
-#include "pch.h"
+#pragma once
+
 #include "MapaSolucio.h"
 #include "PuntDeInteresBotigaSolucio.h"
 #include "PuntDeInteresRestaurantSolucio.h"
@@ -12,6 +13,8 @@ MapaSolucio::MapaSolucio() {
 
 	m_pdis.push_back(bakery);
 	m_pdis.push_back(restaurant);
+
+	m_camins.push_back(new CamiSolucio());
 }
 
 MapaSolucio::~MapaSolucio() {
@@ -19,8 +22,16 @@ MapaSolucio::~MapaSolucio() {
 	for (auto pdi : m_pdis) {
 		delete pdi;
 	}
+
+	for (auto camins : m_camins) {
+		delete camins;
+	}
 }
 
 void MapaSolucio::getPdis(vector<PuntDeInteresBase*>& pdis){
 	pdis = m_pdis;
+}
+
+void MapaSolucio::getCamins(std::vector<CamiBase*>& camins) {
+	camins = m_camins;
 }

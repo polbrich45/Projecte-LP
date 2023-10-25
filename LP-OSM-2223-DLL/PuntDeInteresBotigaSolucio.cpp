@@ -12,7 +12,7 @@ unsigned int PuntDeInteresBotigaSolucio::getColor()
     }
     else if (m_shop == "bakery") {
         
-        if ((m_opening_hours.find("06:00 - 22 : 00") != std::string::npos) && m_wheelchair) {
+        if ((m_opening_hours.find("06:00 - 22 : 00") != std::string::npos) && getWheelChair()) {
             return 0x4CB944;
         }
         else {
