@@ -126,7 +126,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;LPOSM2122DLL_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>..\third-party\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
@@ -161,6 +161,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CamiSolucio.h" />
     <ClInclude Include="Common.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="MapaRender.h" />
@@ -175,7 +176,7 @@
     <ClInclude Include="XML4OSMUtil.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CamiSolucio.h" />
+    <ClCompile Include="CamiSolucio.cpp" />
     <ClCompile Include="DLL-Bridge.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="MapaRender.cpp" />
@@ -187,8 +188,6 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="PuntDeInteresBase.cpp" />
-    <ClCompile Include="PuntDeInteresBotigaSolucio.cpp" />
-    <ClCompile Include="PuntDeInteresRestaurantSolucio.cpp" />
     <ClCompile Include="Util.cpp" />
     <ClCompile Include="XML4OSMUtil.cpp" />
   </ItemGroup>

@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "MapaRender.h"
+#include "MapaSolucio.h"
 #include "Util.h"
 
 MapaRender* MapaRender::m_singleton = nullptr;
@@ -9,7 +10,8 @@ MapaRender::MapaRender() {
     this->m_xml4osm_util = new XML4OSMUtil();
     
     // TODO: Cal que instancieu m_mapaBase amb la vostra MapaSolucio
-    this->m_mapaBase = nullptr;
+    this->m_mapaBase = new MapaSolucio();
+
 }
 
 // DO NOT TOUCH THIS

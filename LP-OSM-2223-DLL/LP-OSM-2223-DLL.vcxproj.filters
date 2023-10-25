@@ -48,6 +48,9 @@
     <ClInclude Include="PuntDeInteresRestaurantSolucio.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CamiSolucio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="MapaSolucio.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -74,14 +77,8 @@
     <ClCompile Include="PuntDeInteresBase.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PuntDeInteresBotigaSolucio.cpp">
+    <ClCompile Include="CamiSolucio.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PuntDeInteresRestaurantSolucio.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CamiSolucio.h">
-      <Filter>Header Files</Filter>
     </ClCompile>
     <ClCompile Include="MapaSolucio.cpp">
       <Filter>Source Files</Filter>

@@ -6,20 +6,21 @@
 #include "PuntDeInteresRestaurantSolucio.h"
 #include "CamiSolucio.h"
 
-using namespace std;
+class MapaSolucio : public MapaBase {
+private:
+    std::vector<PuntDeInteresBase*> m_pdis;
+    std::vector<CamiBase*> m_camins;
+    
+    std::vector<XmlElement*> m_xml;
 
-class MapaSolucio :
-    public MapaBase
-{  
+
+
+
 public:
     MapaSolucio();
     ~MapaSolucio();
 
-    void getPdis(vector<PuntDeInteresBase*>&) override;
+    void getPdis(std::vector<PuntDeInteresBase*>& pdis) override;
     void getCamins(std::vector<CamiBase*>& camins) override;
-
-private:
-    vector<PuntDeInteresBase*> m_pdis;
-    std::vector<CamiBase*> m_camins;
+    void parsejaXmlElements(std::vector<XmlElement>& xmlElements) override;
 };
-
