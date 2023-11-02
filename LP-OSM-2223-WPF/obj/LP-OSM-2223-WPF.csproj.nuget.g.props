@@ -5,13 +5,13 @@
     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
     <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
     <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
-    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\Adrián\.nuget\packages\;C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages</NuGetPackageFolders>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\bbrri\.nuget\packages\;C:\Program Files\dotnet\sdk\NuGetFallbackFolder</NuGetPackageFolders>
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
     <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.7.0</NuGetToolVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <SourceRoot Include="C:\Users\Adrián\.nuget\packages\" />
-    <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
+    <SourceRoot Include="C:\Users\bbrri\.nuget\packages\" />
+    <SourceRoot Include="C:\Program Files\dotnet\sdk\NuGetFallbackFolder\" />
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)microsoft.windows.sdk.contracts\10.0.19041.1\build\Microsoft.Windows.SDK.Contracts.props" Condition="Exists('$(NuGetPackageRoot)microsoft.windows.sdk.contracts\10.0.19041.1\build\Microsoft.Windows.SDK.Contracts.props')" />
@@ -20,8 +20,8 @@
     <Import Project="$(NuGetPackageRoot)microsoft.toolkit.ui.xamlhost\6.1.2\build\Microsoft.Toolkit.UI.XamlHost.props" Condition="Exists('$(NuGetPackageRoot)microsoft.toolkit.ui.xamlhost\6.1.2\build\Microsoft.Toolkit.UI.XamlHost.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgMicrosoft_Toolkit_Win32_UI_SDK Condition=" '$(PkgMicrosoft_Toolkit_Win32_UI_SDK)' == '' ">C:\Users\Adrián\.nuget\packages\microsoft.toolkit.win32.ui.sdk\6.1.2</PkgMicrosoft_Toolkit_Win32_UI_SDK>
-    <PkgMicrosoft_Toolkit_Wpf_UI_XamlHost Condition=" '$(PkgMicrosoft_Toolkit_Wpf_UI_XamlHost)' == '' ">C:\Users\Adrián\.nuget\packages\microsoft.toolkit.wpf.ui.xamlhost\6.1.2</PkgMicrosoft_Toolkit_Wpf_UI_XamlHost>
-    <PkgMicrosoft_Toolkit_Wpf_UI_Controls Condition=" '$(PkgMicrosoft_Toolkit_Wpf_UI_Controls)' == '' ">C:\Users\Adrián\.nuget\packages\microsoft.toolkit.wpf.ui.controls\6.1.2</PkgMicrosoft_Toolkit_Wpf_UI_Controls>
+    <PkgMicrosoft_Toolkit_Win32_UI_SDK Condition=" '$(PkgMicrosoft_Toolkit_Win32_UI_SDK)' == '' ">C:\Users\bbrri\.nuget\packages\microsoft.toolkit.win32.ui.sdk\6.1.2</PkgMicrosoft_Toolkit_Win32_UI_SDK>
+    <PkgMicrosoft_Toolkit_Wpf_UI_XamlHost Condition=" '$(PkgMicrosoft_Toolkit_Wpf_UI_XamlHost)' == '' ">C:\Users\bbrri\.nuget\packages\microsoft.toolkit.wpf.ui.xamlhost\6.1.2</PkgMicrosoft_Toolkit_Wpf_UI_XamlHost>
+    <PkgMicrosoft_Toolkit_Wpf_UI_Controls Condition=" '$(PkgMicrosoft_Toolkit_Wpf_UI_Controls)' == '' ">C:\Users\bbrri\.nuget\packages\microsoft.toolkit.wpf.ui.controls\6.1.2</PkgMicrosoft_Toolkit_Wpf_UI_Controls>
   </PropertyGroup>
 </Project>

@@ -12,11 +12,12 @@ private:
 	
 	string m_shop;
 	string m_openingHours;
-	
+
+
 
 public:
 	PuntDeInteresBotigaSolucio();
-	PuntDeInteresBotigaSolucio(Coordinate coord, std::string name, std::string shopType):PuntDeInteresBase(coord, name), m_shop(shopType) {}
+	PuntDeInteresBotigaSolucio(Coordinate coord, std::string name, bool wheel, std::string shopTypes, std::string openingHours):PuntDeInteresBase(coord, name,wheel), m_shop(shopTypes) ,m_openingHours(openingHours){}
 
 	std::string getName(){ return PuntDeInteresBase::getName(); }
 	bool getWheelChair() { return PuntDeInteresBase::getWheelChair();
@@ -28,14 +29,13 @@ public:
 		{
 			return 0xA5BE00;
 
-		} 
-		
+		}
 		if (m_shop == "tobacco")
 		{
 			return 0xFFAD69;
 		}
 		if (m_shop == "bakery") {
-			if (m_openingHours == "06:00-22:00" && getWheelChair() == true)
+			if (m_openingHours.find("06:00-22:00") != std::string::npos && getWheelChair() == true)
 			{
 				return 0x4CB944;
 			}

@@ -11,6 +11,11 @@ PuntDeInteresBase::PuntDeInteresBase(Coordinate coord, std::string name) {
 	this->m_name = name;
 	this->m_coord = coord;
 }
+PuntDeInteresBase::PuntDeInteresBase(Coordinate coord, std::string name,bool wheel) {
+	this->m_name = name;
+	this->m_coord = coord;
+	this->wheelchair = wheel;
+}
 
 Coordinate PuntDeInteresBase::getCoord() {
 	return this->m_coord;

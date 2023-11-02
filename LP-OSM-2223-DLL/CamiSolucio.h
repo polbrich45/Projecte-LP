@@ -7,6 +7,5 @@
 class CamiSolucio : public CamiBase {
 public:
     std::vector<Coordinate> getCamiCoords();
-
-    CamiSolucio() { getCamiCoords(); }
+    std::vector<Coordinate> getCamiCoords_par(std::vector<Coordinate> camiCoords);
 };

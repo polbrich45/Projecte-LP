@@ -13,7 +13,7 @@ class PuntDeInteresBase {
 	public:		
 		PuntDeInteresBase();
 		PuntDeInteresBase(Coordinate coord, std::string name);
-
+		PuntDeInteresBase(Coordinate coord, std::string name, bool wheel);
 		virtual bool getWheelChair() { return wheelchair; };
 		virtual std::string getName();
 		virtual Coordinate getCoord();
