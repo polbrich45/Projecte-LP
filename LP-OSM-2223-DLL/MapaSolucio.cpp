@@ -96,7 +96,7 @@ void MapaSolucio::parsejaXmlElements(std::vector<XmlElement>& xmlElements)
                         }
                     }
                 }
-
+                //tonto quien lo lea
                 if (var_restaurant && name != "") {
                     PuntDeInteresRestaurantSolucio* restaurant = new PuntDeInteresRestaurantSolucio({ lat, lon }, name, wheelchair, cuisine);
                     m_pdis.push_back(restaurant);
@@ -105,7 +105,7 @@ void MapaSolucio::parsejaXmlElements(std::vector<XmlElement>& xmlElements)
                     PuntDeInteresBotigaSolucio* bakery = new PuntDeInteresBotigaSolucio({ lat, lon }, name, wheelchair, shop, opening_hours);
                     m_pdis.push_back(bakery);
                 }
-            }
+            } 
         }
         /* if (xmlElements[i].id_element == "way") {
             bool isHighway = false;
