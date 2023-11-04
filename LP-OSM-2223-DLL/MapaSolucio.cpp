@@ -23,7 +23,7 @@ MapaSolucio::MapaSolucio() {
 
 MapaSolucio::~MapaSolucio() {
     
-    for (auto pdi : m_pdis) {
+    for (auto pdi : m_pdis) { 
         delete pdi;
     }
     for (auto cami : m_camins) {
@@ -40,13 +40,14 @@ void MapaSolucio::getCamins(std::vector<CamiBase*>& camins) {
 }
 
     
-    
+    //
     
      
    
 
 void MapaSolucio::parsejaXmlElements(std::vector<XmlElement>& xmlElements)
 {
+    std::unordered_map<std::string, std::pair<double, double>> nodes_map = obtenirNodes(xmlElements);
     for (int i = 0; i < xmlElements.size(); i++) {
         double lat = 0;
         double lon = 0;
@@ -56,8 +57,8 @@ void MapaSolucio::parsejaXmlElements(std::vector<XmlElement>& xmlElements)
         string node_id = "";
 
         if (xmlElements[i].id_element == "node") {
-            bool var_restaurant;
-            bool var_shop;
+            bool var_restaurant = false;
+            bool var_shop = false;
             for (int j = 0; j < xmlElements[i].atributs.size(); j++) {
                 if (xmlElements[i].atributs[j].first == "lon") {
                     lon = std::stod(xmlElements[i].atributs[j].second);
@@ -71,9 +72,6 @@ void MapaSolucio::parsejaXmlElements(std::vector<XmlElement>& xmlElements)
             }
 
             for (int j = 0; j < xmlElements[i].fills.size(); j++) {
-                var_restaurant = false;
-                var_shop = false;
-
                 if (xmlElements[i].fills[j].first == "tag") {
                     if (xmlElements[i].fills[j].second[0].second == "cuisine") {
                         cuisine = xmlElements[i].fills[j].second[1].second;
@@ -87,7 +85,7 @@ void MapaSolucio::parsejaXmlElements(std::vector<XmlElement>& xmlElements)
                         var_shop = true;
                     }
                     if (xmlElements[i].fills[j].second[0].second == "opening_hours") {
-                        shop = xmlElements[i].fills[j].second[1].second;
+                        opening_hours = xmlElements[i].fills[j].second[1].second;
                     }
                     if (xmlElements[i].fills[j].second[0].second == "wheelchair") {
                         string aux = xmlElements[i].fills[j].second[1].second;
@@ -96,75 +94,101 @@ void MapaSolucio::parsejaXmlElements(std::vector<XmlElement>& xmlElements)
                         }
                     }
                 }
-                //tonto quien lo lea
-                if (var_restaurant && name != "") {
+            }
+
+
+            if ((var_restaurant || var_shop) && !name.empty() && (lat != 0 || lon != 0)) {
+                if (var_restaurant) {
                     PuntDeInteresRestaurantSolucio* restaurant = new PuntDeInteresRestaurantSolucio({ lat, lon }, name, wheelchair, cuisine);
                     m_pdis.push_back(restaurant);
                 }
-                if (var_shop && name != "") {
+                if (var_shop) {
                     PuntDeInteresBotigaSolucio* bakery = new PuntDeInteresBotigaSolucio({ lat, lon }, name, wheelchair, shop, opening_hours);
                     m_pdis.push_back(bakery);
                 }
-            } 
-        }
-        /* if (xmlElements[i].id_element == "way") {
-            bool isHighway = false;
-            int j = 0;
-
-            while (j < xmlElements[i].fills.size() && !isHighway) {
-                if (xmlElements[i].fills[j].second[0].second == "highway") {
-                    isHighway = true;
-                }
-                j++;
             }
+        }
+    
+        if (xmlElements[i].id_element == "way") {
+            bool isHighway = false;
+            
+            
+            for (int j = 0; j < xmlElements[i].fills.size(); j++) {
+                
+                if (xmlElements[i].fills[j].first == "tag") {
 
-            if (isHighway) {
-                std::vector<string> nodes;
-                std::vector<Coordinate> nodosCoords;
-                for (int k = 0; k < xmlElements[i].fills.size(); k++) {
-                    if (xmlElements[i].fills[k].second[0].second == "nd") {
-                        nodes.push_back(xmlElements[i].fills[k].second[1].second);
+                    if (xmlElements[i].fills[j].second[0].second == "highway") {
+                        isHighway = true;
                     }
+
                 }
+                
+            }
+            
+            if (isHighway) {
+                std::vector<std::string> nodes;
+                std::vector<Coordinate> nodosCoords;
+                for (int j = 0; j < xmlElements[i].fills.size(); j++) {
+                    if (xmlElements[i].fills[j].first == "tag") {
+
+                        if (xmlElements[i].fills[j].second[0].second == "nd") {
+                            nodes.push_back(xmlElements[i].fills[j].second[1].second);
+                        }
+
+                          }
+                   
+                }
+                
                 CamiSolucio* aux = new CamiSolucio();
                 for (int n = 0; n < nodes.size(); n++) {
-                    for (int s = 0; s < xmlElements.size(); s++) {
-                        if (xmlElements[s].id_element == "node") {
-                            int p = 0; bool var = false;
-                            while (p < xmlElements[s].atributs.size() && !var) {
-                                if (xmlElements[s].atributs[p].first == "id" && xmlElements[s].atributs[p].second == nodes[n]) {
-                                    double lat = 0;
-                                    double lon = 0;
-                                    for (int a = 0; a < xmlElements[s].atributs.size(); a++) {
-                                        if (xmlElements[s].atributs[a].first == "lat") {
-                                            lat = std::stod(xmlElements[s].atributs[a].second);
-                                        }
-                                        if (xmlElements[s].atributs[a].first == "lon") {
-                                            lon = std::stod(xmlElements[s].atributs[a].second);
-                                        }
-                                    }
-
-                                    if (lat != 0 && lon != 0) {
-                                        nodosCoords.push_back({ lat, lon });
-                                        var = true;
-                                    }
-                                }
-                                p++;
-                            }
-                        }
+                    auto node = nodes_map.find(nodes[n]);
+                    if (node != nodes_map.end()) {
+                        nodosCoords.push_back({ node->second.first, node->second.second });
                     }
-
                 }
                 aux->getCamiCoords_par(nodosCoords);
                 m_camins.push_back(aux);
                 nodosCoords.clear();
                 nodes.clear();
-            } */
+            }
+            
+        }
+    }
+}
+
+std::unordered_map<std::string, std::pair<double, double>> MapaSolucio::obtenirNodes(const std::vector<XmlElement>& xmlElements)
+{
+    std::unordered_map<std::string, std::pair<double, double>> nodesMap;
+
+    for (const auto& element : xmlElements) {
+
+        if (element.id_element == "node") {
+            std::string id;
+            double lat = 0;
+            double lon = 0;
+
+            for (const auto& atributo : element.atributs) {
+                if (atributo.first == "id") {
+                    id = atributo.second;
+                }
+                else if (atributo.first == "lat") {
+                    lat = std::stod(atributo.second);
+                }
+                else if (atributo.first == "lon") {
+                    lon = std::stod(atributo.second);
+                }
+            }
+
+            if (lat != 0 && lon != 0) {
+                nodesMap[id] = std::make_pair(lat, lon);
+            }
         }
     }
 
- 
+    return nodesMap;
 
+
+}
     
 
 

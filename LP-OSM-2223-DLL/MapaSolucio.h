@@ -5,6 +5,7 @@
 #include "PuntDeInteresBotigaSolucio.h"
 #include "PuntDeInteresRestaurantSolucio.h"
 #include "CamiSolucio.h"
+#include <unordered_map>
 
 class MapaSolucio : public MapaBase {
 private:
@@ -23,5 +24,5 @@ public:
     void getPdis(std::vector<PuntDeInteresBase*>& pdis) override;
     void getCamins(std::vector<CamiBase*>& camins) override;
     void parsejaXmlElements(std::vector<XmlElement>& xmlElements) override;
-    void buscarNodes(std::vector<XmlElement>& xmlElements);
+    std::unordered_map<std::string, std::pair<double, double>> obtenirNodes(const std::vector<XmlElement>& xmlElements);
 };
