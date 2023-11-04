@@ -17,8 +17,10 @@ MapaSolucio::MapaSolucio() {
     m_pdis.push_back(bakery);
     m_pdis.push_back(restaurant);
 
+
+    m_camins.push_back((new CamiSolucio()));
     
-    m_camins.push_back(new CamiSolucio());
+   
 }
 
 MapaSolucio::~MapaSolucio() {
@@ -138,16 +140,15 @@ void MapaSolucio::parsejaXmlElements(std::vector<XmlElement>& xmlElements)
                           }
                    
                 }
-                
-                CamiSolucio* aux = new CamiSolucio();
+               
                 for (int n = 0; n < nodes.size(); n++) {
                     auto node = nodes_map.find(nodes[n]);
                     if (node != nodes_map.end()) {
                         nodosCoords.push_back({ node->second.first, node->second.second });
                     }
                 }
-                aux->getCamiCoords_par(nodosCoords);
-                m_camins.push_back(aux);
+      
+                m_camins.push_back((new CamiSolucio(nodosCoords)));
                 nodosCoords.clear();
                 nodes.clear();
             }
