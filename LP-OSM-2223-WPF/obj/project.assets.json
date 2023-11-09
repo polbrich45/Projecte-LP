@@ -1030,23 +1030,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\bbrri\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Usuario\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bbrri\\OneDrive\\Escritorio\\Projecte-LB\\LP-OSM-2223-WPF\\LP-OSM-2223-WPF.csproj",
+      "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\Projecte-LP\\LP-OSM-2223-WPF\\LP-OSM-2223-WPF.csproj",
       "projectName": "LP-OSM-2223-WPF",
-      "projectPath": "C:\\Users\\bbrri\\OneDrive\\Escritorio\\Projecte-LB\\LP-OSM-2223-WPF\\LP-OSM-2223-WPF.csproj",
-      "packagesPath": "C:\\Users\\bbrri\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bbrri\\OneDrive\\Escritorio\\Projecte-LB\\LP-OSM-2223-WPF\\obj\\",
+      "projectPath": "C:\\Users\\Usuario\\Desktop\\Projecte-LP\\LP-OSM-2223-WPF\\LP-OSM-2223-WPF.csproj",
+      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Usuario\\Desktop\\Projecte-LP\\LP-OSM-2223-WPF\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\bbrri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1061,8 +1062,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\bbrri\\OneDrive\\Escritorio\\Projecte-LB\\LP-OSM-2223-DLL\\LP-OSM-2223-DLL.vcxproj": {
-              "projectPath": "C:\\Users\\bbrri\\OneDrive\\Escritorio\\Projecte-LB\\LP-OSM-2223-DLL\\LP-OSM-2223-DLL.vcxproj"
+            "C:\\Users\\Usuario\\Desktop\\Projecte-LP\\LP-OSM-2223-DLL\\LP-OSM-2223-DLL.vcxproj": {
+              "projectPath": "C:\\Users\\Usuario\\Desktop\\Projecte-LP\\LP-OSM-2223-DLL\\LP-OSM-2223-DLL.vcxproj"
             }
           }
         }
@@ -1110,7 +1111,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,5 +1,5 @@
 #pragma once
-    
+
 #include "MapaSolucio.h"
 #include "PuntDeInteresBotigaSolucio.h"
 #include "PuntDeInteresRestaurantSolucio.h"
@@ -8,24 +8,24 @@
 
 
 MapaSolucio::MapaSolucio() {
-    
-    PuntDeInteresBotigaSolucio* bakery = new PuntDeInteresBotigaSolucio({ 41.4918606, 2.1465411 }, "La Millor Pastisseria", false, "bakery", "Div 06:00-22:00");
 
-    PuntDeInteresRestaurantSolucio* restaurant = new PuntDeInteresRestaurantSolucio({ 41.4902204, 2.1406477 }, "El Millor Restaurant", true,"regional");
+    //* bakery = new PuntDeInteresBotigaSolucio({ 41.4918606, 2.1465411 }, "La Millor Pastisseria", false, "bakery", "Div 06:00-22:00");
 
-     
-    m_pdis.push_back(bakery);
-    m_pdis.push_back(restaurant);
+    //PuntDeInteresRestaurantSolucio* restaurant = new PuntDeInteresRestaurantSolucio({ 41.4902204, 2.1406477 }, "Cafe Gaucho", false,"regional");
 
 
-    m_camins.push_back((new CamiSolucio()));
-    
-   
+    //m_pdis.push_back(bakery);
+    //m_pdis.push_back(restaurant);
+
+
+    //m_camins.push_back((new CamiSolucio()));
+
+
 }
 
 MapaSolucio::~MapaSolucio() {
-    
-    for (auto pdi : m_pdis) { 
+
+    for (auto pdi : m_pdis) {
         delete pdi;
     }
     for (auto cami : m_camins) {
@@ -41,21 +41,25 @@ void MapaSolucio::getCamins(std::vector<CamiBase*>& camins) {
     camins = m_camins;
 }
 
-    
-    //
-    
-     
-   
+
+//
+
+
+
 
 void MapaSolucio::parsejaXmlElements(std::vector<XmlElement>& xmlElements)
 {
+    m_camins.clear();
+    m_pdis.clear();
+    m_xml.clear();
+
     std::unordered_map<std::string, std::pair<double, double>> nodes_map = obtenirNodes(xmlElements);
     for (int i = 0; i < xmlElements.size(); i++) {
         double lat = 0;
         double lon = 0;
         string cuisine = "", name = "", shop = "";
         string opening_hours = "";
-        bool wheelchair = false;
+        bool wheelchair = true;
         string node_id = "";
 
         if (xmlElements[i].id_element == "node") {
@@ -88,11 +92,12 @@ void MapaSolucio::parsejaXmlElements(std::vector<XmlElement>& xmlElements)
                     }
                     if (xmlElements[i].fills[j].second[0].second == "opening_hours") {
                         opening_hours = xmlElements[i].fills[j].second[1].second;
+                        var_shop = true;
                     }
                     if (xmlElements[i].fills[j].second[0].second == "wheelchair") {
                         string aux = xmlElements[i].fills[j].second[1].second;
-                        if (aux == "yes") {
-                            wheelchair = true;
+                        if (aux == "no") {
+                            wheelchair = false;
                         }
                     }
                 }
@@ -110,13 +115,12 @@ void MapaSolucio::parsejaXmlElements(std::vector<XmlElement>& xmlElements)
                 }
             }
         }
-    
+
         if (xmlElements[i].id_element == "way") {
             bool isHighway = false;
-            
-            
+
             for (int j = 0; j < xmlElements[i].fills.size(); j++) {
-                
+
                 if (xmlElements[i].fills[j].first == "tag") {
 
                     if (xmlElements[i].fills[j].second[0].second == "highway") {
@@ -124,35 +128,37 @@ void MapaSolucio::parsejaXmlElements(std::vector<XmlElement>& xmlElements)
                     }
 
                 }
-                
+
             }
-            
+
+
             if (isHighway) {
                 std::vector<std::string> nodes;
                 std::vector<Coordinate> nodosCoords;
                 for (int j = 0; j < xmlElements[i].fills.size(); j++) {
-                    if (xmlElements[i].fills[j].first == "tag") {
+                    if (xmlElements[i].fills[j].first == "nd") {
 
-                        if (xmlElements[i].fills[j].second[0].second == "nd") {
-                            nodes.push_back(xmlElements[i].fills[j].second[1].second);
+                        if (xmlElements[i].fills[j].second[0].first == "ref") {
+                            nodes.push_back(xmlElements[i].fills[j].second[0].second);
+
                         }
 
-                          }
-                   
+                    }
+
                 }
-               
+
                 for (int n = 0; n < nodes.size(); n++) {
                     auto node = nodes_map.find(nodes[n]);
                     if (node != nodes_map.end()) {
                         nodosCoords.push_back({ node->second.first, node->second.second });
                     }
                 }
-      
+
                 m_camins.push_back((new CamiSolucio(nodosCoords)));
                 nodosCoords.clear();
                 nodes.clear();
             }
-            
+
         }
     }
 }
@@ -160,7 +166,6 @@ void MapaSolucio::parsejaXmlElements(std::vector<XmlElement>& xmlElements)
 std::unordered_map<std::string, std::pair<double, double>> MapaSolucio::obtenirNodes(const std::vector<XmlElement>& xmlElements)
 {
     std::unordered_map<std::string, std::pair<double, double>> nodesMap;
-
     for (const auto& element : xmlElements) {
 
         if (element.id_element == "node") {
@@ -190,7 +195,6 @@ std::unordered_map<std::string, std::pair<double, double>> MapaSolucio::obtenirN
 
 
 }
-    
 
 
-    
+
