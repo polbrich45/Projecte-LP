@@ -38,11 +38,6 @@ public:
 
                 afegirNode(coord);
 
-                m_matriuAdj.push_back(std::vector<int>(m_numNodes));
-
-                m_numNodes++;
-
-                for (int i = 0; i < m_numNodes; i++) m_matriuAdj[i].push_back(0);
 
             }
 
@@ -66,17 +61,21 @@ public:
 
 
 
-        if (it != m_nodes.end())
+        if (it == m_nodes.end())
 
         {
 
             m_nodes.push_back(node);
 
+            m_matriuAdj.push_back(std::vector<double>(m_numNodes));
+
+            for (int i = 0; i < m_numNodes; i++) m_matriuAdj[i].push_back(0);
+
+            m_numNodes++;
+
         }
 
-
-
-
+        
 
     }
 
@@ -92,9 +91,9 @@ public:
 
         auto it2 = std::find(m_nodes.begin(), m_nodes.end(), node2);
 
-        int pos1 = m_nodes.end() - it1;
+        int pos1 = it1 - m_nodes.begin();
 
-        int pos2 = m_nodes.end() - it2;
+        int pos2 = it2 - m_nodes.begin();
 
 
 
@@ -122,7 +121,7 @@ public:
 
     {
 
-        for (int i = 0; i < cami.size(); i++)
+        for (int i = 0; i < cami.size()-1; i++)
 
         {
 
@@ -140,7 +139,7 @@ private:
 
     std::vector<Coordinate> m_nodes;
 
-    std::vector<std::vector<int>> m_matriuAdj;
+    std::vector<std::vector<double>> m_matriuAdj;
 
     int m_numNodes;
 
