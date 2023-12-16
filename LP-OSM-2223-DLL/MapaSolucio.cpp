@@ -6,7 +6,6 @@
 #include "Util.h"
 
 
-
 MapaSolucio::MapaSolucio() {
 
     //* bakery = new PuntDeInteresBotigaSolucio({ 41.4918606, 2.1465411 }, "La Millor Pastisseria", false, "bakery", "Div 06:00-22:00");
@@ -44,7 +43,11 @@ void MapaSolucio::getCamins(std::vector<CamiBase*>& camins) {
 
 //
 
-
+CamiBase* MapaSolucio::buscaCamiMesCurt(PuntDeInteresBase* desde, PuntDeInteresBase* a) {
+    Graf graf(m_camins);
+    vector<Coordinate> camins = graf.dijkstra(desde->getCoord(), a->getCoord());
+    return new CamiSolucio(camins);
+}
 
 
 void MapaSolucio::parsejaXmlElements(std::vector<XmlElement>& xmlElements)
@@ -195,6 +198,5 @@ std::unordered_map<std::string, std::pair<double, double>> MapaSolucio::obtenirN
 
 
 }
-
 
 

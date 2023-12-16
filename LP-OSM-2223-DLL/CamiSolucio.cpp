@@ -4,7 +4,6 @@
 
 
 std::vector<Coordinate> CamiSolucio::getCamiCoords() {
-
     return m_cami;
 }
 

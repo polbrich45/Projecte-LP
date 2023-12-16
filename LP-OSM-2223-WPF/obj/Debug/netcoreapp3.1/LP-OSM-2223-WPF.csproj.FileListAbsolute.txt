@@ -442,7 +442,6 @@ C:\Users\bbrri\OneDrive\Escritorio\Projecte-LB\LP-OSM-2223-WPF\obj\Debug\netcore
 C:\Users\bbrri\OneDrive\Escritorio\Projecte-LB\LP-OSM-2223-WPF\obj\Debug\netcoreapp3.1\LP-OSM-2223-WPF.dll
 C:\Users\bbrri\OneDrive\Escritorio\Projecte-LB\LP-OSM-2223-WPF\obj\Debug\netcoreapp3.1\LP-OSM-2223-WPF.pdb
 C:\Users\bbrri\OneDrive\Escritorio\Projecte-LB\LP-OSM-2223-WPF\obj\Debug\netcoreapp3.1\LP-OSM-2223-WPF.genruntimeconfig.cache
-C:\Users\Usuario\Desktop\Projecte-LP\LP-OSM-2223-WPF\bin\Debug\netcoreapp3.1\LP-OSM-2223-DLL.dll
 C:\Users\Usuario\Desktop\Projecte-LP\LP-OSM-2223-WPF\bin\Debug\netcoreapp3.1\xerces-c_3_2D.dll
 C:\Users\Usuario\Desktop\Projecte-LP\LP-OSM-2223-WPF\bin\Debug\netcoreapp3.1\LP-OSM-2223-WPF.exe
 C:\Users\Usuario\Desktop\Projecte-LP\LP-OSM-2223-WPF\bin\Debug\netcoreapp3.1\LP-OSM-2223-WPF.deps.json
@@ -531,3 +530,4 @@ C:\Users\Usuario\Desktop\Projecte-LP\LP-OSM-2223-WPF\obj\Debug\netcoreapp3.1\LP-
 C:\Users\Usuario\Desktop\Projecte-LP\LP-OSM-2223-WPF\obj\Debug\netcoreapp3.1\LP-OSM-2223-WPF.dll
 C:\Users\Usuario\Desktop\Projecte-LP\LP-OSM-2223-WPF\obj\Debug\netcoreapp3.1\LP-OSM-2223-WPF.pdb
 C:\Users\Usuario\Desktop\Projecte-LP\LP-OSM-2223-WPF\obj\Debug\netcoreapp3.1\LP-OSM-2223-WPF.genruntimeconfig.cache
+C:\Users\Usuario\Desktop\Projecte-LP\LP-OSM-2223-WPF\bin\Debug\netcoreapp3.1\LP-OSM-2223-DLL.dll

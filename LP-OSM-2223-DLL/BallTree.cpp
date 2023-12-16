@@ -73,6 +73,27 @@ void BallTree::postOrdre(std::vector<std::list<Coordinate>>& out) {
 
 Coordinate BallTree::nodeMesProper(Coordinate targetQuery, Coordinate& Q, BallTree* ball) {
     // TODO: TASCA 3
+    Q = { 0.00,0.00 };
+    if (ball->getRadi() == 0.001) { Q = ball->getPivot(); }
+    double target_distance = Util::DistanciaHaversine(targetQuery, ball->getPivot());
+    double ball_distance = Util::DistanciaHaversine(targetQuery, Q);
+
+    if (target_distance - ball->getRadi() >= ball_distance) {
+        return Q;
+    }
+    else {
+
+
+        double target_distance_left = Util::DistanciaHaversine(targetQuery, ball->getEsquerre()->getPivot());
+        double target_distance_right = Util::DistanciaHaversine(targetQuery, ball->getDreta()->getPivot());
+
+        if (target_distance_left < target_distance_right) {
+            nodeMesProper(targetQuery, Q, ball->getEsquerre());
+        }
+        else {
+            nodeMesProper(targetQuery, Q, ball->getDreta());
+        }
+    }
 }
 
 
